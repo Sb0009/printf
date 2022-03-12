@@ -4,10 +4,8 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  </head>
-  <body>
-    <main>
-      <h1 style="color: crimson;text-align: center;"> Write our own _printf :smiled:</h1>
+  </head
+      <h1 style="color: crimson;text-align: center;"> Write our own _printf</h1>
         # 0x11. C - printf
 
 
@@ -55,12 +53,12 @@ Those are the format identifier's needed to write:
 %X | hex integer (uppercase)|
 %% | just the %				|
 
-## We will handle in this project
+## We  handle in this project
 --- the flags:
---- field width
---- precision
+--- the field width
+--- the precision
 --- the length modifiers
---- custom conversion specifiers
+--- and custom conversion specifiers
 
 
 
@@ -92,7 +90,7 @@ Those are the format identifier's needed to write:
 
 <footer>
 
-
+https://forthebadge.com/generator/?plabel=By+Nicolas+Bout%C3%A9&slabel=Siham+Badyine
 
 </footer>
 
