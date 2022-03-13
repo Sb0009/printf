@@ -34,6 +34,8 @@ int		handle_specialchar(const char **format, format_t *data)
  */
 void	init_struct(format_t *data)
 {
+	data->buffer[0] = '\0';
+	data->bufferlen = 0;
 	data->fct_tab[SPEC_c].spec = 'c';
 	data->fct_tab[SPEC_s].spec = 's';
 	data->fct_tab[SPEC_perc].spec = '%';

@@ -5,6 +5,9 @@
 #include <unistd.h>
 #include <stdarg.h>
 #include <stdio.h>
+
+#define BUFF_SIZE 1024
+
 enum format_spec
 {
 	SPEC_c = 0,
@@ -40,11 +43,16 @@ typedef struct	format_s
 	unsigned char		width_flg;
 	char				precision_flg;
 	format_functions_t	fct_tab[15];
+	char				buffer[BUFF_SIZE];
+	size_t				bufferlen;
 }				format_t;
 
 int		_printf(const char *format, ...);
 
 
 int		handle_spec_c(void *ptr);
+
+
+int		_strlen(char *str);
 
 #endif /* __MAIN_H__ */
