@@ -27,6 +27,12 @@ enum format_spec
 	SPEC_LAST
 };
 
+/**
+ * struct format_function_s - Structure associating specifier to a function
+ * @spec: Specifier character
+ * @fct: Pointer to function corresponding to specifier
+ */
+
 typedef struct	format_functions_s
 {
 	char	spec;
@@ -34,14 +40,30 @@ typedef struct	format_functions_s
 }				format_functions_t;
 
 
+/**
+ * struct format_s - Structure containg general data relevant to the function
+ * @args: List of arguments
+ * @minus_flag: Indicates if the flag '-' is currently used and its value
+ * @plus_flag: Indicates if the flag '+' is currently used and its value
+ * @zero_flag: Indicates if the flag '0' is currently used and its value
+ * @space_flag: Indicates if the flag ' ' is currently used and its value
+ * @width_flag: Indicates if the width flag is currently used and its value
+ * @precision_flag: Indicates if the precision flag is currently used and its value
+ * @fct_tab: Array of pointers to structure referencing a specifier function
+ * @buffer: Buffer where content is written before being outputted to stdout
+ * @buffer_len: Current length of the buffer
+ * @nb_written_bytes: Number of currently written characters
+ */
+
 typedef struct	format_s
 {
 	va_list				args;
-	char				minus_flag;
-	char				plus_flag;
+	unsigned char		minus_flag;
+	unsigned char		plus_flag;
 	unsigned char		space_flag;
+	unsigned char		zero_flag;
 	unsigned char		width_flg;
-	char				precision_flg;
+	unsigned char		precision_flg;
 	format_functions_t	fct_tab[15];
 	char				buffer[BUFF_SIZE];
 	size_t				bufferlen;

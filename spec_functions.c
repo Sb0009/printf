@@ -1,5 +1,10 @@
 #include "main.h"
 
+/**
+ * handle_spec_c - Function to get and output next char variable given to printf
+ * @ptr: Pointer to general data structure
+ * Return: 0 if no error
+ */
 int		handle_spec_c(void *ptr)
 {
 	format_t	*data;
@@ -11,4 +16,3 @@ int		handle_spec_c(void *ptr)
 	write_buffer(c, 1, data);
 	return (0);
 }
-

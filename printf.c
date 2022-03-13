@@ -1,6 +1,12 @@
 #include "main.h"
 
 
+/**
+ * handle_specialchar - Calls fonction corresponding to specifier in format string
+ * @format: Pointer to format string
+ * @data: Pointer to structure containing general data
+ * Return: -1 if error, 0 if none
+ */
 int		handle_specialchar(const char **format, format_t *data)
 {
 	int			i;
@@ -34,6 +40,7 @@ int		handle_specialchar(const char **format, format_t *data)
  */
 void	init_struct(format_t *data)
 {
+	data->nb_written_bytes = 0;
 	data->buffer[0] = '\0';
 	data->bufferlen = 0;
 	data->fct_tab[SPEC_c].spec = 'c';
@@ -96,5 +103,5 @@ int		_printf(const char *format, ...)
 		}
 	}
 	write_buffer(NULL, 0, &data);
-	return (0);
+	return (data.nb_written_bytes);
 }
