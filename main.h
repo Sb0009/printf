@@ -48,11 +48,16 @@ typedef struct	format_s
 }				format_t;
 
 int		_printf(const char *format, ...);
+int		write_printf(const char *str, size_t len, format_t *data);
 
 
 int		handle_spec_c(void *ptr);
 
 
 int		_strlen(char *str);
+char	*_strncat(char *dest, const char *src, int n);
+char	*_strcpy(char *dest, const char *src);
+char	*_strncpy(char *dest, const char *src, int n);
+char	*_strcat(char *dest,const char *src);
 
 #endif /* __MAIN_H__ */

@@ -3,10 +3,12 @@
 int		handle_spec_c(void *ptr)
 {
 	format_t	*data;
-	char		c;
+	char		c[2];
 
 	data = (format_t*)ptr;
-	c = va_arg(data->args, int);
-	write(1, &c, 1);
+	c[0] = va_arg(data->args, int);
+	c[1] = '\0';
+	write_printf(c, 1, data);
 	return (0);
 }
+

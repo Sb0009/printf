@@ -12,7 +12,7 @@ int		handle_specialchar(const char **format, format_t *data)
 
 	for (i = 0; i < SPEC_LAST; i++)
 	{
-		if (**format == data->fct_tab[i].spec)
+		if (**format && **format == data->fct_tab[i].spec)
 		{
 			(*format)++;
 			if (data->fct_tab[i].fct)
@@ -84,9 +84,10 @@ int		_printf(const char *format, ...)
 		}
 		if (ret)
 		{
-			write(1, format, 1);
+			write_printf(format, 1, &data);
 			format++;
 		}
 	}
+	write_printf(NULL, 0, &data);
 	return (0);
 }
