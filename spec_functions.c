@@ -8,7 +8,7 @@ int		handle_spec_c(void *ptr)
 	data = (format_t*)ptr;
 	c[0] = va_arg(data->args, int);
 	c[1] = '\0';
-	write_printf(c, 1, data);
+	write_buffer(c, 1, data);
 	return (0);
 }
 

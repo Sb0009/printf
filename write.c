@@ -1,13 +1,18 @@
 #include "main.h"
 
+void	print_buffer(format_t *data, const char *str, size_t len)
+{
+	data->nb_written_bytes += len;
+	write(1, str, len);
+}
+
 int		handle_buffer_overflow(const char *str, size_t len, format_t *data)
 {
 	while (len)
 	{
 		if (len > BUFF_SIZE - 1)
 		{
-		printf("[C]\n");
-			write(1, str, BUFF_SIZE - 1);
+			print_buffer(data, str, BUFF_SIZE - 1);
 			len -= BUFF_SIZE - 1;
 			str += BUFF_SIZE - 1;
 		}
@@ -21,13 +26,13 @@ int		handle_buffer_overflow(const char *str, size_t len, format_t *data)
 	return (0);
 }
 
-int		write_printf(const char *str, size_t len, format_t *data)
+int		write_buffer(const char *str, size_t len, format_t *data)
 {
 	size_t	i;
 
 	if (!str)
 	{
-		write(1, data->buffer, data->bufferlen);
+		print_buffer(data, data->buffer, data->bufferlen);
 		data->buffer[0] = '\0';
 		data->bufferlen = 0;
 	}
@@ -37,7 +42,7 @@ int		write_printf(const char *str, size_t len, format_t *data)
 			data->buffer[data->bufferlen + i] = str[i];
 		data->buffer[data->bufferlen + i] = '\0';
 		data->bufferlen += i;
-		write(1, data->buffer, data->bufferlen);
+		print_buffer(data, data->buffer, data->bufferlen);
 		data->buffer[0] = '\0';
 		data->bufferlen = 0;
 		handle_buffer_overflow(str + i, len - i, data);

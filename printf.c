@@ -68,10 +68,16 @@ void	init_struct(format_t *data)
 	data->fct_tab[SPEC_LAST].fct = NULL;
 }
 
+/**
+ * _printf - Imitates the existing function printf
+ * @format: String to parse and print
+ * Return: The number of characters printed
+ */
 int		_printf(const char *format, ...)
 {
 	format_t	data;
 	int			ret;
+	int			len;
 
 	va_start(data.args, format);
 	init_struct(&data);
@@ -84,10 +90,11 @@ int		_printf(const char *format, ...)
 		}
 		if (ret)
 		{
-			write_printf(format, 1, &data);
-			format++;
+			len = _strclen(format, '%');
+			write_buffer(format, len, &data);
+			format += len;
 		}
 	}
-	write_printf(NULL, 0, &data);
+	write_buffer(NULL, 0, &data);
 	return (0);
 }

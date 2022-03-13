@@ -74,21 +74,18 @@ char	*_strncpy(char *dest, const char *src, int n)
 	return (str);
 }
 
-/**
- * _strcat - concatenates two strings
- * @dest: string to append to
- * @src: string to append to dest
- * Return: dest
- */
-char	*_strcat(char *dest, const char *src)
-{
-	char	*str;
 
-	str = dest;
-	while (*dest)
-		dest++;
-	while (*src)
-		*dest++ = *src++;
-	*dest = '\0';
-	return (str);
+/**
+ * _strclen - Counts size of a string till specific character or eos
+ * @str: String to check size of
+ * @c: Separator character
+ * Return: Seturns size of str till @c
+ */
+int		_strclen(const char *str, char c)
+{
+	int	i;
+
+	for (i = 0; str[i] && str[i] != c; i++)
+		;
+	return (i);
 }
