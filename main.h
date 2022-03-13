@@ -27,7 +27,7 @@ enum format_spec
 typedef struct	format_functions_s
 {
 	char	spec;
-	int		(*fct)(const char *, void *ptr);
+	int		(*fct)(void *ptr);
 }				format_functions_t;
 
 
@@ -45,6 +45,6 @@ typedef struct	format_s
 int		_printf(const char *format, ...);
 
 
-int		handle_spec_c(const char *format, void *ptr);
+int		handle_spec_c(void *ptr);
 
 #endif /* __MAIN_H__ */

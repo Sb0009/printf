@@ -16,7 +16,7 @@ int		handle_specialchar(const char **format, format_t *data)
 		{
 			(*format)++;
 			if (data->fct_tab[i].fct)
-				return (data->fct_tab[i].fct(*format, (void*)data));
+				return (data->fct_tab[i].fct((void*)data));
 			else
 			{
 				printf("Function not available yet\n");
