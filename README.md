@@ -1,4 +1,4 @@
-ls<!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
@@ -80,7 +80,7 @@ Those are the format identifier's needed to write:
 ## Ressources
 
 * [_printf overview]()
-* [secrets of printf](<a href="./printf[1]4.pdf">)
+* [secrets of printf](<a href="Ressources/The_Secret.pdf">)
 
 
 ## tests
@@ -89,7 +89,7 @@ Those are the format identifier's needed to write:
 
 
 <footer>
-
+![image]({https://img.shields.io/badge/LinkedIn-0077B5?style=for-the-badge&logo=linkedin&logoColor=white})
 </footer>
 
 </body>
