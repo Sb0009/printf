@@ -53,7 +53,7 @@ This allows us for a more global vision and to record tasks more quickly
 
 <p><img src="Images/flowchart.png" alt="flowchart" width="350 px"></p> 
 
-Those are the format identifier's needed to write:
+## Those are the format identifiers needed to write:
 
 %  | type |
 ---|------|
