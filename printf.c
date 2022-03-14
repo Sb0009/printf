@@ -59,7 +59,7 @@ void	init_struct(format_t *data)
 	data->fct_tab[SPEC_R].spec = 'R';
 	data->fct_tab[SPEC_LAST].spec = '\0';
 	data->fct_tab[SPEC_c].fct = handle_spec_c;
-	data->fct_tab[SPEC_s].fct = NULL;
+	data->fct_tab[SPEC_s].fct = print_s;
 	data->fct_tab[SPEC_perc].fct = NULL;
 	data->fct_tab[SPEC_d].fct = NULL;
 	data->fct_tab[SPEC_i].fct = NULL;
@@ -68,8 +68,8 @@ void	init_struct(format_t *data)
 	data->fct_tab[SPEC_o].fct = NULL;
 	data->fct_tab[SPEC_x].fct = NULL;
 	data->fct_tab[SPEC_X].fct = NULL;
-	data->fct_tab[SPEC_S].fct = NULL;
-	data->fct_tab[SPEC_p].fct = NULL;
+	data->fct_tab[SPEC_S].fct = print_S;
+	data->fct_tab[SPEC_p].fct = print_per_c;
 	data->fct_tab[SPEC_r].fct = NULL;
 	data->fct_tab[SPEC_R].fct = NULL;
 	data->fct_tab[SPEC_LAST].fct = NULL;
