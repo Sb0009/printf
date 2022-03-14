@@ -63,7 +63,7 @@ void	init_struct(format_t *data)
 	data->fct_tab[SPEC_perc].fct = NULL;
 	data->fct_tab[SPEC_d].fct = handle_spec_di;
 	data->fct_tab[SPEC_i].fct = handle_spec_di;
-	data->fct_tab[SPEC_b].fct = NULL;
+	data->fct_tab[SPEC_b].fct = handle_spec_b;
 	data->fct_tab[SPEC_u].fct = NULL;
 	data->fct_tab[SPEC_o].fct = NULL;
 	data->fct_tab[SPEC_x].fct = NULL;
