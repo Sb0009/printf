@@ -1,5 +1,9 @@
 #include "main.h"
 
+/**
+ * reset_flags - Resets flags for struct format_s for next variable parsing
+ * @data: Pointer to structure containing general data
+ */
 void	reset_flags(format_t *data)
 {
 	data->minus_flag = 0;
@@ -15,7 +19,7 @@ void	reset_flags(format_t *data)
 }
 
 /**
- * handle_specialchar - Calls fonction corresponding to specifier in format string
+ * handle_specialchar - Calls fonction corresponding to specifier in string
  * @format: Pointer to format string
  * @data: Pointer to structure containing general data
  * Return: -1 if error, 0 if none
@@ -36,12 +40,9 @@ int		handle_specialchar(const char **format, format_t *data)
 		{
 			(*format)++;
 			if (data->fct_tab[i].fct)
-				return (data->fct_tab[i].fct((void*)data));
-			else
-			{
-				printf("Function not available yet\n");
-				return (-1);
-			}
+				return (data->fct_tab[i].fct((void *)data));
+			printf("Function not available yet\n");
+			return (-1);
 		}
 		/* code */
 	}
