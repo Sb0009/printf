@@ -55,7 +55,7 @@ Those are the format identifier's needed to write:
 %X | hex integer (uppercase)|
 %% | just the %				|
 
-## We  handle in this project
+## We handle in this project
 --- the flags:
 --- the field width
 --- the precision
@@ -68,30 +68,30 @@ Those are the format identifier's needed to write:
 
 
 
-## flowchart
+## Flowchart
 
 
-## integers
-
-
-
-## decimal to hexadecimal conversion
+## Integers
 
 
 
-## ressources
+## Decimal to hexadecimal conversion
+
+
+
+##Ressources
 
 * [_printf overview]()
 * [secrets of printf](<a href="Ressources/The_Secret.pdf">)
 
-  ## usage
+## Usage
   Have a look at our [documentation](./Man)
   
-  ## Learn more 
+## Learn more 
   write in your terminal 
   $ man 3 printf.
 
-## tests
+## Tests
 
 
 <footer>
