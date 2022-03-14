@@ -122,6 +122,4 @@ This allows us for a more global vision and to record tasks more quickly
 </footer>
 
 </body>
-<script src="https://platform.linkedin.com/badges/js/profile.js" async defer type="text/javascript"></script>  
-
 </html>
