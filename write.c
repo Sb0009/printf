@@ -3,7 +3,7 @@
 /**
  * print_buffer - Prints given string and adds its length to counter
  * @data: Pointer to structure containing general data
- * @s: String to print
+ * @str: String to print
  * @len: Length of @s
  */
 void	print_buffer(format_t *data, const char *str, size_t len)
@@ -13,7 +13,7 @@ void	print_buffer(format_t *data, const char *str, size_t len)
 }
 
 /**
- * handle_buffer_overflow - Print buffer handler for when string to output is too long
+ * handle_buffer_overflow - Print buffer handler for longer strings
  * @str: String to print
  * @len: Length of @str
  * @data: Pointer to structure containing general data

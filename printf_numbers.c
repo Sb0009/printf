@@ -1,5 +1,12 @@
 #include "main.h"
 
+/**
+ * get_signed_number - Writes unformatted number to given string
+ * @str: String to write number in
+ * @nb: Number
+ * @base: Base to write number in
+ * @returns {any}
+ */
 void	get_signed_number(char *str, long nb, short base)
 {
 	int		nb_digits;
@@ -25,6 +32,13 @@ void	get_signed_number(char *str, long nb, short base)
 	}
 }
 
+/**
+ * get_unsigned_number - Writes unformatted number to given string
+ * @str: String to write number in
+ * @nb: Number
+ * @base: Base to write number in
+ * @returns {any}
+ */
 void	get_unsigned_number(char *str, unsigned long nb, short base)
 {
 	int				nb_digits;
@@ -48,6 +62,14 @@ void	get_unsigned_number(char *str, unsigned long nb, short base)
 	}
 }
 
+/**
+ * format_number - Outputs formatted number string corresponding to flags
+ * @str: Unformatted number string
+ * @nb: Number
+ * @base: Base of number
+ * @data: Pointer to general data structure
+ * @returns {any}
+ */
 char	*format_number(char *str, long nb, short base, format_t *data)
 {
 	char	*buff;
@@ -88,6 +110,13 @@ char	*format_number(char *str, long nb, short base, format_t *data)
 	return (buff);
 }
 
+/**
+ * printf_numbers - Creates string depending on number, base and given flags
+ * @nb: Number to convert to string
+ * @base: Numerical base to write the number in
+ * @data: Pointer to general data structure
+ *
+ */
 char	*printf_numbers(long nb, short base, format_t *data)
 {
 	char	str[64];
