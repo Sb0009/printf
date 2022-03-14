@@ -48,4 +48,3 @@ int	handle_spec_di(void *ptr)
 	free(str);
 	return (0);
 }
-
