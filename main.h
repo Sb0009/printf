@@ -83,5 +83,15 @@ char	*_strncat(char *dest, const char *src, int n);
 char	*_strcpy(char *dest, const char *src);
 char	*_strncpy(char *dest, const char *src, int n);
 int		_strclen(const char *str, char c);
-
+int print_string(va_list argument);
+int _putchar(char c);
+int print_s(va_list arg);
+int print_S(va_list arg);
+int print_b(va_list arg);
+int print_r(va_list arg);
+int print_p(va_list arg);
+int print_u(va_list arg);
+int print_x(va_list arg);
+int print_X(va_list arg);
+int print_o(va_list arg);
 #endif /* __MAIN_H__ */
