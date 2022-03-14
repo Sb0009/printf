@@ -1,5 +1,5 @@
 /**
- * print_Percent - function that print a percent
+ * print_Percent - function that prints a percent
  * @args: variadic arguments
  * Return:  percent
  */
