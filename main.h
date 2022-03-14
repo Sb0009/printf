@@ -66,6 +66,8 @@ typedef struct	format_s
 	unsigned char		hash_flag;
 	unsigned char		precision_flag;
 	unsigned char		uppercase_flag;
+	unsigned char		long_flag;
+	unsigned char		short_flag;
 	format_functions_t	fct_tab[15];
 	char				buffer[BUFF_SIZE];
 	size_t				bufferlen;

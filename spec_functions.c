@@ -36,11 +36,16 @@ int		handle_spec_s(void *ptr)
 int	handle_spec_di(void *ptr)
 {
 	format_t	*data;
-	int			nb;
+	long		nb;
 	char		*str;
 
 	data = (format_t *)ptr;
-	nb = va_arg(data->args, int);
+	if (data->long_flag = 1)
+		nb = (long)va_arg(data->args, long);
+	else if (data->short_flag = 1)
+		nb = (short)va_arg(data->args, short);
+	else
+		nb = va_arg(data->args, int);
 	str = printf_numbers(nb, 10, data);
 	if (!str)
 		return (-1);

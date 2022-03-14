@@ -1,5 +1,18 @@
 #include "main.h"
 
+void	reset_flags(format_t *data)
+{
+	data->minus_flag = 0;
+	data->plus_flag = 0;
+	data->space_flag = 0;
+	data->zero_flag = 0;
+	data->width_flag = 0;
+	data->hash_flag = 0;
+	data->precision_flag = 0;
+	data->uppercase_flag = 0;
+	data->long_flag = 0;
+	data->short_flag = 0;
+}
 
 /**
  * handle_specialchar - Calls fonction corresponding to specifier in format string
@@ -11,6 +24,7 @@ int		handle_specialchar(const char **format, format_t *data)
 {
 	int			i;
 
+	reset_flags(data);
 	(*format)++;
 	/**
 	 * Add format handling here
