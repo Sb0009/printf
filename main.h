@@ -85,6 +85,7 @@ int		handle_spec_s(void *ptr);
 int		handle_spec_di(void *ptr);
 int		handle_spec_b(void *ptr);
 int		handle_spec_p(void *ptr);
+int		handle_spec_perc(void *ptr);
 
 int		_strlen(char *str);
 char	*_strncat(char *dest, const char *src, int n);
@@ -93,7 +94,6 @@ char	*_strncpy(char *dest, const char *src, int n);
 int		_strclen(const char *str, char c);
 char	*_strdup(char *str);
 char	*_strcat(char *dest, char *src);
-
 int print_string(va_list arg);
-int print_Per_c(va_list args);
+
 #endif /* __MAIN_H__ */
