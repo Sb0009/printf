@@ -1,6 +1,6 @@
 #include "main.h"
 
-void	get_signed_number(char *str, long nb, short base, format_t *data)
+void	get_signed_number(char *str, long nb, short base)
 {
 	int		nb_digits;
 	long	cpy;
@@ -8,7 +8,7 @@ void	get_signed_number(char *str, long nb, short base, format_t *data)
 
 	nb_digits = 1;
 	cpy = nb;
-	while (cpy >= base)
+	while ((cpy > 0 && cpy >= base) || (cpy < 0 && cpy <= -base))
 	{
 		cpy /= base;
 		nb_digits++;
@@ -25,8 +25,7 @@ void	get_signed_number(char *str, long nb, short base, format_t *data)
 	}
 }
 
-void	get_unsigned_number(char *str, unsigned long nb, short base,
-		format_t *data)
+void	get_unsigned_number(char *str, unsigned long nb, short base)
 {
 	int				nb_digits;
 	unsigned long	cpy;
@@ -34,7 +33,7 @@ void	get_unsigned_number(char *str, unsigned long nb, short base,
 
 	nb_digits = 1;
 	cpy = nb;
-	while (cpy >= base)
+	while (cpy >= (unsigned long)base)
 	{
 		cpy /= base;
 		nb_digits++;
@@ -84,6 +83,7 @@ char	*format_number(char *str, long nb, short base, format_t *data)
 	/**
 	 * Add flags formatting here
 	 */
+	(void)nblen;
 	_strcat(buff, str);
 	return (buff);
 }
@@ -98,8 +98,8 @@ char	*printf_numbers(long nb, short base, format_t *data)
 	for (i = 0; i < 64; i++)
 		str[i] = '\0';
 	if (base == 10 && nb < 0)
-		get_signed_number(str, nb, base, data);
+		get_signed_number(str, nb, base);
 	else
-		get_unsigned_number(str, (unsigned long)nb, base, data);
-	return (format_number(str, nb, base, data))
+		get_unsigned_number(str, (unsigned long)nb, base);
+	return (format_number(str, nb, base, data));
 }
