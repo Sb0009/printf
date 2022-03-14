@@ -103,6 +103,8 @@ int		_printf(const char *format, ...)
 	int			ret;
 	int			len;
 
+	if (!format)
+		return (-1);
 	va_start(data.args, format);
 	init_struct(&data);
 	while (*format)

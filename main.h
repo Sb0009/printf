@@ -8,6 +8,25 @@
 
 #define BUFF_SIZE 1024
 
+/**
+ * enum format_spec - Lists all possible specifiers for the printf project
+ * @SPEC_c: char 'c'
+ * @SPEC_s: char 's'
+ * @SPEC_perc: char 'perc'
+ * @SPEC_d: char 'd'
+ * @SPEC_i: char 'i'
+ * @SPEC_b: char 'b'
+ * @SPEC_u: char 'u'
+ * @SPEC_u: char 'u'
+ * @SPEC_o: char 'o'
+ * @SPEC_x: char 'x'
+ * @SPEC_X: char 'X'
+ * @SPEC_S: char 'S'
+ * @SPEC_p: char 'p'
+ * @SPEC_r: char 'r'
+ * @SPEC_R: char 'R'
+ * @SPEC_LAST: end of enum
+ */
 enum format_spec
 {
 	SPEC_c = 0,
@@ -28,11 +47,10 @@ enum format_spec
 };
 
 /**
- * struct format_function_s - Structure associating specifier to a function
+ * struct format_functions_s - Structure associating specifier to a function
  * @spec: Specifier character
  * @fct: Pointer to function corresponding to specifier
  */
-
 typedef struct	format_functions_s
 {
 	char	spec;
@@ -43,18 +61,21 @@ typedef struct	format_functions_s
 /**
  * struct format_s - Structure containg general data relevant to the function
  * @args: List of arguments
- * @minus_flag: Indicates if the flag '-' is currently used and its value
- * @plus_flag: Indicates if the flag '+' is currently used and its value
- * @zero_flag: Indicates if the flag '0' is currently used and its value
- * @space_flag: Indicates if the flag ' ' is currently used and its value
- * @width_flag: Indicates if the width flag is currently used and its value
- * @precision_flag: Indicates if the precision flag is currently used and its value
+ * @minus_flag: Tells state of flag '-'
+ * @plus_flag: Tells state of flag '+'
+ * @zero_flag: Tells state of flag '0'
+ * @space_flag: Tells state of flag ' '
+ * @width_flag: Tells state of width flag
+ * @hash_flag: Tells state of hash flag
+ * @precision_flag: Tells state of precision flag
+ * @uppercase_flag: Tells state of uppercase flag
+ * @long_flag: Tells state of long flag
+ * @short_flag: Tells state of short flag
  * @fct_tab: Array of pointers to structure referencing a specifier function
  * @buffer: Buffer where content is written before being outputted to stdout
- * @buffer_len: Current length of the buffer
+ * @bufferlen: Current length of the buffer
  * @nb_written_bytes: Number of currently written characters
  */
-
 typedef struct	format_s
 {
 	va_list				args;
