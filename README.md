@@ -89,7 +89,7 @@ Those are the format identifier's needed to write:
   
 ## Learn more 
   write in your terminal 
-  $ man 3 printf.
+ `$ man 3 printf`.
 
 ## Tests
 
@@ -97,6 +97,10 @@ Those are the format identifier's needed to write:
 <footer>
  
 ![Team Badges](./Images/ourbadges.svg)
+  
+  
+
+  
               
 </footer>
 
