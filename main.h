@@ -82,7 +82,7 @@ int		handle_spec_c(void *ptr);
 int		handle_spec_s(void *ptr);
 int		handle_spec_di(void *ptr);
 int		handle_spec_b(void *ptr);
-
+int		handle_spec_p(void *ptr);
 
 int		_strlen(char *str);
 char	*_strncat(char *dest, const char *src, int n);
