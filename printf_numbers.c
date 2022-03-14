@@ -68,7 +68,7 @@ void	get_unsigned_number(char *str, unsigned long nb, short base)
  * @nb: Number
  * @base: Base of number
  * @data: Pointer to general data structure
- * Return: Formatted number string
+ * Return: Formatted number
  */
 char	*format_number(char *str, long nb, short base, format_t *data)
 {
@@ -128,6 +128,10 @@ char	*printf_numbers(long nb, short base, format_t *data)
 		str[i] = '\0';
 	if (base == 10 && nb < 0)
 		get_signed_number(str, nb, base);
+	else if (data->nb_bytes == 2)
+		get_unsigned_number(str, (unsigned short)nb, base);
+	else if (data->nb_bytes == 4)
+		get_unsigned_number(str, (unsigned int)nb, base);
 	else
 		get_unsigned_number(str, (unsigned long)nb, base);
 	return (format_number(str, nb, base, data));

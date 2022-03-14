@@ -60,6 +60,7 @@ typedef struct	format_functions_s
 
 /**
  * struct format_s - Structure containg general data relevant to the function
+ * @nb_bytes: Number of bytes used by variable
  * @args: List of arguments
  * @minus_flag: Tells state of flag '-'
  * @plus_flag: Tells state of flag '+'
@@ -79,6 +80,7 @@ typedef struct	format_functions_s
 typedef struct	format_s
 {
 	va_list				args;
+	int					nb_bytes;
 	unsigned char		minus_flag;
 	unsigned char		plus_flag;
 	unsigned char		space_flag;

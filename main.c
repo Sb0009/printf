@@ -31,5 +31,8 @@ int		main(void)
 
 	printf("{%d}\n", _printf("bijour %"));
 	printf("{%d}\n", printf("bijour %"));
+
+
+	printf("{%d}\n", _printf("%b\n", -1));
 	return (0);
 }
