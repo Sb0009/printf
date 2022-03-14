@@ -30,7 +30,9 @@ Our secret for the _printf project is a well-structured departure
 We have solved problems before start coding to know exactly what are we going to code.
 
 Then, start coding this project on the way Paris/Toulouse the 11th of March 2022
-In the train for reach, le "Salon de l'etudiant 2022 " to represent Holberton School.
+In the train for reach, le "Salon de l'etudiant 2022 " to represent Holberton School and share our passion with futur students visiting the Salon Studyrama.
+  
+ 
 
 
 
