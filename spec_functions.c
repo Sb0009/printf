@@ -16,3 +16,21 @@ int		handle_spec_c(void *ptr)
 	write_buffer(c, 1, data);
 	return (0);
 }
+
+/**
+ * handle_spec_s - Function to get and output string variable given to printf
+ * @ptr: Pointer to general data structure
+ * Return: 0 if no error
+ */
+int		handle_spec_s(void *ptr)
+{
+	format_s	*data;
+	string		s[11];
+
+	data = (format_s*)ptr;
+	s[0] = va_arg(data->args, int);
+	s[11] = '\0';
+	write_buffer(s, 11, data);
+	return (0);
+}
+

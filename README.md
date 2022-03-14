@@ -24,13 +24,15 @@ work in programming at Holberton School.
 
 
 
-It will permit us to well understand variadic functions in C.
+It will permit us to understand well variadic functions in C.
 
 Our secret for the _printf project is a well-structured departure
 We have solved problems before start coding to know exactly what are we going to code.
 
 Then, start coding this project on the way Paris/Toulouse the 11th of March 2022
-In the train for reach, le "Salon de l'etudiant 2022 " to represent Holberton School.
+In the train for reach, le "Salon de l'etudiant 2022 " to represent Holberton School and share our passion with futur students visiting the Salon Studyrama.
+  
+ 
 
 
 
@@ -53,7 +55,7 @@ Those are the format identifier's needed to write:
 %X | hex integer (uppercase)|
 %% | just the %				|
 
-## We  handle in this project
+## We handle in this project
 --- the flags:
 --- the field width
 --- the precision
@@ -66,30 +68,36 @@ Those are the format identifier's needed to write:
 
 
 
-## flowchart
+## Flowchart
 
 
-## integers
-
-
-
-## decimal to hexadecimal conversion
+## Integers
 
 
 
-## Ressources
+## Decimal to hexadecimal conversion
+
+
+
+##Ressources
 
 * [_printf overview]()
-* [secrets of printf](<a href="./printf[1]4.pdf">)
+* [secrets of printf](<a href="Ressources/The_Secret.pdf">)
 
+## Usage
+  Have a look at our [documentation](./Man)
+  
+## Learn more 
+  write in your terminal 
+  $ man 3 printf.
 
-## tests
-
-
+## Tests
 
 
 <footer>
-
+ 
+![Team Badges](./Images/ourbadges.svg)
+              
 </footer>
 
 </body>
