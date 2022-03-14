@@ -68,7 +68,7 @@ void	get_unsigned_number(char *str, unsigned long nb, short base)
  * @nb: Number
  * @base: Base of number
  * @data: Pointer to general data structure
- * @returns {any}
+ * Return: Formatted number string
  */
 char	*format_number(char *str, long nb, short base, format_t *data)
 {
@@ -115,7 +115,7 @@ char	*format_number(char *str, long nb, short base, format_t *data)
  * @nb: Number to convert to string
  * @base: Numerical base to write the number in
  * @data: Pointer to general data structure
- *
+ * Return: Formatted number string
  */
 char	*printf_numbers(long nb, short base, format_t *data)
 {

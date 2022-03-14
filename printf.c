@@ -46,6 +46,8 @@ int		handle_specialchar(const char **format, format_t *data)
 		}
 		/* code */
 	}
+	if (**format)
+		write_buffer((*format) - 1, 1, data);
 	return (-1);
 }
 
@@ -113,6 +115,11 @@ int		_printf(const char *format, ...)
 		if (*format == '%')
 		{
 			ret = handle_specialchar(&format, &data);
+			if (!*format && ret == -1)
+			{
+				write_buffer(NULL, 0, &data);
+				return (-1);
+			}
 		}
 		if (ret)
 		{
