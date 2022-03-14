@@ -7,7 +7,15 @@
   </head
       <h1 style="color: crimson;text-align: center;"> Write our own _printf</h1>
         
+## Theory and Practice
 
+- Stéphanie Metche Serpault Directrice Holberton School Toulouse at Salon de l Etudiant with
+
+- Nicolas Bouté
+- Siham Badyine
+
+
+<p><img src="https://media-exp1.licdn.com/dms/image/C5622AQGTBgMxO9XJlg/feedshare-shrink_1280/0/1647092494592?e=1649894400&v=beta&t=aFyQ_-YNA--W3q7mf7CcCvHPDZFAU3CGFPlNxL6usfQ" alt="the team with directrice Holberton School Toulouse" width="142px"></p> 
 
 * [Introduction](#introduction)
 * [Steps](#steps)
@@ -70,8 +78,12 @@ Those are the format identifier's needed to write:
 
 ## Flowchart
 
+<p><img src="./Images/flowchart.png" alt="flowchart" width="350 px"></p> 
+
+
 
 ## Integers
+
 
 
 
@@ -86,6 +98,8 @@ Those are the format identifier's needed to write:
 
 ## Usage
   Have a look at our [documentation](./man_3_printf)
+  Feel free to clone or fork this repository, if you have any problem 
+  you can contact us.
   
 ## Learn more 
   write in your terminal 
