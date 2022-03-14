@@ -49,3 +49,18 @@ int	handle_spec_di(void *ptr)
 	return (0);
 }
 
+int	handle_spec_b(void *ptr)
+{
+	format_t	*data;
+	int			nb;
+	char		*str;
+
+	data = (format_t *)ptr;
+	nb = va_arg(data->args, int);
+	str = printf_numbers(nb, 2, data);
+	if (!str)
+		return (-1);
+	write_buffer(str, _strlen(str), data);
+	free(str);
+	return (0);
+}

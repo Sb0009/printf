@@ -79,6 +79,9 @@ char	*printf_numbers(long nb, short base, format_t *data);
 
 
 int		handle_spec_c(void *ptr);
+int		handle_spec_s(void *ptr);
+int		handle_spec_di(void *ptr);
+int		handle_spec_b(void *ptr);
 
 
 int		_strlen(char *str);
