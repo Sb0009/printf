@@ -79,13 +79,13 @@ Those are the format identifier's needed to write:
 
 
 
-##Ressources
+## Ressources
 
 * [_printf overview]()
 * [secrets of printf](<a href="Ressources/The_Secret.pdf">)
 
 ## Usage
-  Have a look at our [documentation](./Man)
+  Have a look at our [documentation](./man_3_printf)
   
 ## Learn more 
   write in your terminal 
