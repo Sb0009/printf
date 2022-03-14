@@ -62,8 +62,10 @@ typedef struct	format_s
 	unsigned char		plus_flag;
 	unsigned char		space_flag;
 	unsigned char		zero_flag;
-	unsigned char		width_flg;
-	unsigned char		precision_flg;
+	unsigned char		width_flag;
+	unsigned char		hash_flag;
+	unsigned char		precision_flag;
+	unsigned char		uppercase_flag;
 	format_functions_t	fct_tab[15];
 	char				buffer[BUFF_SIZE];
 	size_t				bufferlen;
@@ -73,6 +75,7 @@ typedef struct	format_s
 int		_printf(const char *format, ...);
 int		write_buffer(const char *str, size_t len, format_t *data);
 void	print_buffer(format_t *data, const char *str, size_t len);
+char	*printf_numbers(long nb, short base, format_t *data);
 
 
 int		handle_spec_c(void *ptr);
@@ -83,5 +86,7 @@ char	*_strncat(char *dest, const char *src, int n);
 char	*_strcpy(char *dest, const char *src);
 char	*_strncpy(char *dest, const char *src, int n);
 int		_strclen(const char *str, char c);
+char	*_strdup(char *str);
+char	*_strcat(char *dest, char *src);
 
 #endif /* __MAIN_H__ */
