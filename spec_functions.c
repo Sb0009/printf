@@ -50,7 +50,7 @@ int	handle_spec_di(void *ptr)
 	if (data->long_flag == 1)
 		nb = (long)va_arg(data->args, long);
 	else if (data->short_flag == 1)
-		nb = (short)va_arg(data->args, short);
+		nb = (short)va_arg(data->args, int);
 	else
 		nb = va_arg(data->args, int);
 	str = printf_numbers(nb, 10, data);
@@ -83,18 +83,15 @@ int	handle_spec_b(void *ptr)
 }
 
 /**
- * handle_spec_perc - Function to get and output next char variable given to printf
+ * handle_spec_perc - Function to output '%' char
  * @ptr: Pointer to general data structure
  * Return: 0 if no error
  */
 int		handle_spec_perc(void *ptr)
 {
 	format_t	*data;
-	char		perc[2];
 
 	data = (format_t *)ptr;
-	c[0] = va_arg(data->args, int);
-	c[1] = '\0';
-	write_buffer("%%", 1, data);
+	write_buffer("%", 1, data);
 	return (0);
 }
