@@ -24,13 +24,28 @@ int		handle_spec_c(void *ptr)
  */
 int		handle_spec_s(void *ptr)
 {
-	format_s	*data;
-	string		s[11];
+	format_t	*data;
+	char		*s;
 
-	data = (format_s*)ptr;
-	s[0] = va_arg(data->args, int);
-	s[11] = '\0';
-	write_buffer(s, 11, data);
+	data = (format_t*)ptr;
+	s = va_arg(data->args, char *);
+	write_buffer(s, _strlen(s), data);
+	return (0);
+}
+
+int	handle_spec_di(void *ptr)
+{
+	format_t	*data;
+	int			nb;
+	char		*str;
+
+	data = (format_t *)ptr;
+	nb = va_arg(data->args, int);
+	str = printf_numbers(nb, 10, data);
+	if (!str)
+		return (-1);
+	write_buffer(str, _strlen(str), data);
+	free(str);
 	return (0);
 }
 
