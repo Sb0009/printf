@@ -1,7 +1,7 @@
 
 ## Theory and Practice
 
-- Stéphanie Metche Serpault Directrice Holberton School Toulouse and the futur Blockchain Programmer Paul-Emile at Salon de l Etudiant with
+- Stéphanie Metche Serpault Directrice Holberton School Toulouse at Salon de l Etudiant with
 
 - Nicolas Bouté
 - Siham Badyine
