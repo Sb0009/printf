@@ -3,7 +3,7 @@
  * @args: variadic arguments
  * Return:  percent
  */
-int print_Percent(va_list args)
+int print_Per_c(va_list args)
 {
 	(void)args;
 	_putchar ('%');

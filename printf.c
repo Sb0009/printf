@@ -59,11 +59,11 @@ void	init_struct(format_t *data)
 	data->fct_tab[SPEC_R].spec = 'R';
 	data->fct_tab[SPEC_LAST].spec = '\0';
 	data->fct_tab[SPEC_c].fct = handle_spec_c;
-<<<<<<< HEAD
+
 	data->fct_tab[SPEC_s].fct = print_s;
-=======
+
 	data->fct_tab[SPEC_s].fct = handle_spec_s;
->>>>>>> e06881c75eab87d7cabca90f89caefd27f9711df
+
 	data->fct_tab[SPEC_perc].fct = NULL;
 	data->fct_tab[SPEC_d].fct = handle_spec_di;
 	data->fct_tab[SPEC_i].fct = handle_spec_di;
@@ -73,7 +73,7 @@ void	init_struct(format_t *data)
 	data->fct_tab[SPEC_x].fct = NULL;
 	data->fct_tab[SPEC_X].fct = NULL;
 	data->fct_tab[SPEC_S].fct = print_S;
-	data->fct_tab[SPEC_p].fct = print_per_c;
+	data->fct_tab[SPEC_p].fct = print_Per_c;
 	data->fct_tab[SPEC_r].fct = NULL;
 	data->fct_tab[SPEC_R].fct = NULL;
 	data->fct_tab[SPEC_LAST].fct = NULL;
