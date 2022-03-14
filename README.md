@@ -49,6 +49,10 @@ In the train for reach, le "Salon de l'etudiant 2022 " to represent Holberton Sc
 First of all, we drawn a flowchart
 This allows us for a more global vision and to record tasks more quickly
 
+## Flowchart
+
+<p><img src="Images/flowchart.png" alt="flowchart" width="350 px"></p> 
+
 Those are the format identifier's needed to write:
 
 %  | type |
@@ -70,15 +74,6 @@ Those are the format identifier's needed to write:
 --- the length modifiers
 --- and custom conversion specifiers
 
-
-
-
-
-
-
-## Flowchart
-
-<p><img src="./Images/flowchart.png" alt="flowchart" width="350 px"></p> 
 
 
 
@@ -112,10 +107,18 @@ Those are the format identifier's needed to write:
  
 ![Team Badges](./Images/ourbadges.svg)
   
-  
+
 
   
-              
+<div class="badge-base LI-profile-badge" data-locale="fr_FR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="siham-b-523a36230" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://fr.linkedin.com/in/siham-b-523a36230?trk=profile-badge">Siham B.</a></div>              
+
+
+
+
+<div class="badge-base LI-profile-badge" data-locale="fr_FR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="siham-b-523a36230" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://fr.linkedin.com/in/siham-b-523a36230?trk=profile-badge">Siham B.</a></div>
+              <img alt="Nicolas Bouté" width="40px" src=./Images/logo_linkd.png> 
+
+
 </footer>
 
 </body>
