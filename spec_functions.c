@@ -70,3 +70,19 @@ int	handle_spec_b(void *ptr)
 	return (0);
 }
 
+/**
+ * handle_spec_c - Function to get and output next char variable given to printf
+ * @ptr: Pointer to general data structure
+ * Return: 0 if no error
+ */
+int		handle_spec_p(void *ptr)
+{
+	format_t	*data;
+	char		p[2];
+
+	data = (format_t*)ptr;
+	c[0] = va_arg(data->args, int);
+	c[1] = '\0';
+	write_buffer(p, 1, data);
+	return (0);
+}
