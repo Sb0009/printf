@@ -105,6 +105,8 @@ int		write_buffer(const char *str, size_t len, format_t *data);
 void	print_buffer(format_t *data, const char *str, size_t len);
 char	*printf_numbers(long nb, short base, format_t *data);
 size_t	read_flags(const char *format, format_t *data);
+char	*format_string(char *str, format_t *data, char freeable);
+char	*format_number(char *str, long nb, short base, format_t *data);
 
 
 int		handle_spec_c(void *ptr);

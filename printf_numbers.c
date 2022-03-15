@@ -66,57 +66,6 @@ void	get_unsigned_number(char *str, unsigned long nb, short base, int upper)
 }
 
 /**
- * format_number - Outputs formatted number string corresponding to flags
- * @str: Unformatted number string
- * @nb: Number
- * @base: Base of number
- * @data: Pointer to general data structure
- * Return: Formatted number
- */
-char	*format_number(char *str, long nb, short base, format_t *data)
-{
-	char	*buff;
-	size_t	nblen;
-	int		i, len;
-
-	nblen = _strlen(str);
-	len = _strlen(str) + (nb < 0 && base == 10 ? 1 : 0);
-	if (data->hash_flag == 1)
-	{
-		if (base == 2 || base == 16)
-			len += 2;
-		else
-			len++;
-	}
-	if (len < data->width_flag)
-		len = data->width_flag;
-	buff = malloc(sizeof(char) * (len + 1));
-	if (!buff)
-		return (NULL);
-	for (i = 0; i <= len; i++)
-		buff[i] = '\0';
-	if (base == 10 && nb < 0 && data->is_sign)
-		buff[0] = '-';
-	else if (data->plus_flag || data->space_flag)
-	{
-		buff[0] = data->plus_flag ? '+' : ' ';
-		i = i;
-	}
-	if (data->hash_flag == 1 && nb)
-	{
-		if (base == 2 || base == 8 || base == 16)
-			buff[0] = '0';
-		if (base == 2)
-			buff[1] = 'b' + (data->upcase_flag ? -32 : 0);
-		if (base == 16)
-			buff[1] = 'x' + (data->upcase_flag ? -32 : 0);
-	}
-	(void)nblen;
-	_strcat(buff, str);
-	return (buff);
-}
-
-/**
  * printf_numbers - Creates string depending on number, base and given flags
  * @nb: Number to convert to string
  * @base: Numerical base to write the number in

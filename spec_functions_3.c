@@ -43,7 +43,7 @@ void	write_spec_S(char *s, char *s2)
 int		handle_spec_S(void *ptr)
 {
 	format_t	*data;
-	char		*s, *s2, *s3;
+	char		*s, *s2;
 	int			i, count, s2len;
 
 	data = (format_t *)ptr;
@@ -61,10 +61,9 @@ int		handle_spec_S(void *ptr)
 	for (i = 0; i < s2len; i++)
 		s2[i] = '\0';
 	write_spec_S(s, s2);
-	s3 = format_string(s2);
-	free(s2);
+	s2 = format_string(s2, data, 1);
 	write_buffer(s2, s2len, data);
-	free(s3);
+	free(s2);
 	return (0);
 }
 

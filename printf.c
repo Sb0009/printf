@@ -78,11 +78,6 @@ int		handle_specialchar(const char **format, format_t *data)
 				(*format)++;
 				return (data->fct_tab[i].fct((void *)data));
 			}
-			if (!*format)
-			{
-				printf("Function not available yet\n");
-				return (-1);
-			}
 		}
 	}
 	return (handle_specialchar_err(format, data, len));
@@ -165,6 +160,7 @@ int		_printf(const char *format, ...)
 			format += len;
 		}
 	}
-	write_buffer(NULL, 0, &data);
+	if (data.bufferlen)
+		write_buffer(NULL, 0, &data);
 	return (data.nb_written_bytes);
 }
