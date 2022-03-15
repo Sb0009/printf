@@ -118,6 +118,9 @@ int		handle_spec_o(void *ptr);
 int		handle_spec_x(void *ptr);
 int		handle_spec_X(void *ptr);
 int		handle_spec_p(void *ptr);
+int		handle_spec_S(void *ptr);
+int		handle_spec_r(void *ptr);
+int		handle_spec_R(void *ptr);
 
 int		_strlen(char *str);
 char	*_strncat(char *dest, const char *src, int n);
@@ -128,6 +131,8 @@ char	*_strdup(char *str);
 char	*_strcat(char *dest, char *src);
 int		_isdigit(int c);
 int		_atoi(const char *s);
-
+int		_isprint(char c);
+void	rev_string(char *s);
+char	*rot13(char *s);
 
 #endif /* __MAIN_H__ */

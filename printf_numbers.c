@@ -97,7 +97,12 @@ char	*format_number(char *str, long nb, short base, format_t *data)
 		buff[i] = '\0';
 	if (base == 10 && nb < 0 && data->is_sign)
 		buff[0] = '-';
-	if (data->hash_flag == 1)
+	else if (data->plus_flag || data->space_flag)
+	{
+		buff[0] = data->plus_flag ? '+' : ' ';
+		i = i;
+	}
+	if (data->hash_flag == 1 && nb)
 	{
 		if (base == 2 || base == 8 || base == 16)
 			buff[0] = '0';
@@ -106,9 +111,6 @@ char	*format_number(char *str, long nb, short base, format_t *data)
 		if (base == 16)
 			buff[1] = 'x' + (data->upcase_flag ? -32 : 0);
 	}
-	/**
-	 * Add flags formatting here
-	 */
 	(void)nblen;
 	_strcat(buff, str);
 	return (buff);

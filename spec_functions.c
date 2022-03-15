@@ -84,7 +84,24 @@ int	handle_spec_b(void *ptr)
 
 	data = (format_t *)ptr;
 	data->nb_bytes = 4;
-	nb = (unsigned int)va_arg(data->args, int);
+	data->is_sign = 0;
+	data->plus_flag = 0;
+	data->space_flag = 0;
+	if (data->long_flag == 1)
+	{
+		nb = (unsigned long)va_arg(data->args, unsigned long);
+		data->nb_bytes = 8;
+	}
+	else if (data->short_flag == 1)
+	{
+		data->nb_bytes = 2;
+		nb = (unsigned short)va_arg(data->args, int);
+	}
+	else
+	{
+		data->nb_bytes = 4;
+		nb = va_arg(data->args, unsigned int);
+	}
 	str = printf_numbers(nb, 2, data);
 	if (!str)
 		return (-1);

@@ -74,6 +74,8 @@ size_t		read_flags(const char *format, format_t *data)
 			data->space_flag = 1;
 		if (format[len] == '0')
 			data->zero_flag = 1;
+		if (format[len] == '#')
+			data->hash_flag = 1;
 		len++;
 	}
 	if (_isdigit(format[len]))

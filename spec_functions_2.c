@@ -13,6 +13,8 @@ int	handle_spec_u(void *ptr)
 
 	data = (format_t *)ptr;
 	data->is_sign = 0;
+	data->plus_flag = 0;
+	data->space_flag = 0;
 	if (data->long_flag == 1)
 	{
 		nb = (unsigned long)va_arg(data->args, unsigned long);
@@ -50,6 +52,8 @@ int	handle_spec_o(void *ptr)
 
 	data = (format_t *)ptr;
 	data->is_sign = 0;
+	data->plus_flag = 0;
+	data->space_flag = 0;
 	if (data->long_flag == 1)
 	{
 		nb = (unsigned long)va_arg(data->args, unsigned long);
@@ -87,6 +91,8 @@ int	handle_spec_x(void *ptr)
 
 	data = (format_t *)ptr;
 	data->is_sign = 0;
+	data->plus_flag = 0;
+	data->space_flag = 0;
 	if (data->long_flag == 1)
 	{
 		nb = (unsigned long)va_arg(data->args, unsigned long);
@@ -125,6 +131,8 @@ int	handle_spec_X(void *ptr)
 	data = (format_t *)ptr;
 	data->is_sign = 0;
 	data->upcase_flag = 1;
+	data->plus_flag = 0;
+	data->space_flag = 0;
 	if (data->long_flag == 1)
 	{
 		nb = (unsigned long)va_arg(data->args, unsigned long);

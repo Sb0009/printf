@@ -124,10 +124,10 @@ void	init_struct(format_t *data)
 	data->fct_tab[SPEC_o].fct = handle_spec_o;
 	data->fct_tab[SPEC_x].fct = handle_spec_x;
 	data->fct_tab[SPEC_X].fct = handle_spec_X;
-	data->fct_tab[SPEC_S].fct = NULL;
+	data->fct_tab[SPEC_S].fct = handle_spec_S;
 	data->fct_tab[SPEC_p].fct = handle_spec_p;
-	data->fct_tab[SPEC_r].fct = NULL;
-	data->fct_tab[SPEC_R].fct = NULL;
+	data->fct_tab[SPEC_r].fct = handle_spec_r;
+	data->fct_tab[SPEC_R].fct = handle_spec_R;
 	data->fct_tab[SPEC_LAST].fct = NULL;
 }
 
