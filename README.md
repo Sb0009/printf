@@ -105,7 +105,6 @@ This allows us for a more global vision and to record tasks more quickly
 
 <footer>
  
-![Team Badges](./Images/ourbadges.svg)
   
 <div class="badge-base LI-profile-badge" data-locale="fr_FR" data-size="medium" data-theme="dark" data-type="VERTICAL" data-vanity="nicolas-bouté-0192b2112" data-version="v1"><a class="badge-base__link LI-simple-link" href="https://fr.linkedin.com/in/nicolas-bout%C3%A9-0192b2112?trk=profile-badge">Nicolas Bouté</a></div>
 
@@ -116,7 +115,7 @@ This allows us for a more global vision and to record tasks more quickly
 
 
 
- 
+![Team Badges](./Images/ourbadges.svg) 
 
 
 </footer>
