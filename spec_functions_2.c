@@ -147,3 +147,32 @@ int	handle_spec_X(void *ptr)
 	free(str);
 	return (0);
 }
+
+/**
+ * handle_spec_p - Function to get and output next pointer variable argument
+ * @ptr: Pointer to general data structure
+ * Return: 0 if no error
+ */
+int	handle_spec_p(void *ptr)
+{
+	format_t		*data;
+	void			*addr;
+	char			*str;
+
+	data = (format_t *)ptr;
+	data->is_sign = 0;
+	data->nb_bytes = 8;
+	data->hash_flag = 1;
+	addr = va_arg(data->args, void *);
+	if (!addr)
+	{
+		write_buffer("(nil)", 4, data);
+		return (0);
+	}
+	str = printf_numbers((unsigned long)addr, 16, data);
+	if (!str)
+		return (-1);
+	write_buffer(str, _strlen(str), data);
+	free(str);
+	return (0);
+}

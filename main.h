@@ -61,7 +61,7 @@ typedef struct	format_functions_s
 /**
  * struct format_s - Structure containg general data relevant to the function
  * @nb_bytes: Number of bytes used by variable
- * @is_signed: Tells is number is signed or unsigned
+ * @is_sign: Tells is number is signed or unsigned
  * @args: List of arguments
  * @minus_flag: Tells state of flag '-'
  * @plus_flag: Tells state of flag '+'
@@ -70,7 +70,7 @@ typedef struct	format_functions_s
  * @width_flag: Tells state of width flag
  * @hash_flag: Tells state of hash flag
  * @precision_flag: Tells state of precision flag
- * @uppercase_flag: Tells state of uppercase flag
+ * @upcase_flag: Tells state of uppercase flag
  * @long_flag: Tells state of long flag
  * @short_flag: Tells state of short flag
  * @fct_tab: Array of pointers to structure referencing a specifier function
@@ -115,6 +115,7 @@ int		handle_spec_u(void *ptr);
 int		handle_spec_o(void *ptr);
 int		handle_spec_x(void *ptr);
 int		handle_spec_X(void *ptr);
+int		handle_spec_p(void *ptr);
 
 int		_strlen(char *str);
 char	*_strncat(char *dest, const char *src, int n);

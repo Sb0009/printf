@@ -37,7 +37,7 @@ void	get_signed_number(char *str, long nb, short base)
  * @str: String to write number in
  * @nb: Number
  * @base: Base to write number in
- * @returns {any}
+ * @upper: If base is higher than 10, tells if letters should be uppercase
  */
 void	get_unsigned_number(char *str, unsigned long nb, short base, int upper)
 {
@@ -101,9 +101,9 @@ char	*format_number(char *str, long nb, short base, format_t *data)
 		if (base == 2 || base == 8 || base == 16)
 			buff[0] = '0';
 		if (base == 2)
-			buff[1] = 'b' + data->upcase_flag ? -32 : 0;
+			buff[1] = 'b' + (data->upcase_flag ? -32 : 0);
 		if (base == 16)
-			buff[1] = 'x' + data->upcase_flag ? -32 : 0;
+			buff[1] = 'x' + (data->upcase_flag ? -32 : 0);
 	}
 	/**
 	 * Add flags formatting here
