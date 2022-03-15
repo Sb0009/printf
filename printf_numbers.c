@@ -95,7 +95,7 @@ char	*format_number(char *str, long nb, short base, format_t *data)
 		return (NULL);
 	for (i = 0; i <= len; i++)
 		buff[i] = '\0';
-	if (base == 10 && nb < 0)
+	if (base == 10 && nb < 0 && data->is_sign)
 		buff[0] = '-';
 	if (data->hash_flag == 1)
 	{
