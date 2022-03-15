@@ -39,7 +39,7 @@ void	get_signed_number(char *str, long nb, short base)
  * @base: Base to write number in
  * @returns {any}
  */
-void	get_unsigned_number(char *str, unsigned long nb, short base)
+void	get_unsigned_number(char *str, unsigned long nb, short base, int upper)
 {
 	int				nb_digits;
 	unsigned long	cpy;
@@ -56,7 +56,10 @@ void	get_unsigned_number(char *str, unsigned long nb, short base)
 	while (nb_digits > 0)
 	{
 		digit = nb % base;
-		str[nb_digits - 1] = digit + '0';
+		if (digit >= 10)
+			str[nb_digits - 1] = digit - 10 + 'a' + (upper ? -32 : 0);
+		else
+			str[nb_digits - 1] = digit + '0';
 		nb /= base;
 		nb_digits--;
 	}
@@ -98,9 +101,9 @@ char	*format_number(char *str, long nb, short base, format_t *data)
 		if (base == 2 || base == 8 || base == 16)
 			buff[0] = '0';
 		if (base == 2)
-			buff[1] = 'b' + data->uppercase_flag ? -32 : 0;
+			buff[1] = 'b' + data->upcase_flag ? -32 : 0;
 		if (base == 16)
-			buff[1] = 'x' + data->uppercase_flag ? -32 : 0;
+			buff[1] = 'x' + data->upcase_flag ? -32 : 0;
 	}
 	/**
 	 * Add flags formatting here
@@ -126,13 +129,13 @@ char	*printf_numbers(long nb, short base, format_t *data)
 		return (NULL);
 	for (i = 0; i < 64; i++)
 		str[i] = '\0';
-	if (base == 10 && nb < 0)
+	if (data->is_sign)
 		get_signed_number(str, nb, base);
 	else if (data->nb_bytes == 2)
-		get_unsigned_number(str, (unsigned short)nb, base);
+		get_unsigned_number(str, (unsigned short)nb, base, data->upcase_flag);
 	else if (data->nb_bytes == 4)
-		get_unsigned_number(str, (unsigned int)nb, base);
+		get_unsigned_number(str, (unsigned int)nb, base, data->upcase_flag);
 	else
-		get_unsigned_number(str, (unsigned long)nb, base);
+		get_unsigned_number(str, (unsigned long)nb, base, data->upcase_flag);
 	return (format_number(str, nb, base, data));
 }

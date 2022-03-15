@@ -33,6 +33,42 @@ int		main(void)
 	printf("{%d}\n", printf("bijour %"));
 
 
-	printf("{%d}\n", _printf("%b\n", -1));
+	printf("|u:|{%d}\n", _printf("%u", -1));
+	printf("|u:|{%d}\n", printf("%u", -1));
+
+	printf("|u:|{%d}\n", _printf("%u", 0));
+	printf("|u:|{%d}\n", printf("%u", 0));
+
+	printf("|u:|{%d}\n", _printf("%u", 4285798235));
+	printf("|u:|{%d}\n", printf("%u", 4285798235));
+
+
+	printf("|o:|{%d}\n", _printf("%o", -1));
+	printf("|o:|{%d}\n", printf("%o", -1));
+
+	printf("|o:|{%d}\n", _printf("%o", 0));
+	printf("|o:|{%d}\n", printf("%o", 0));
+
+	printf("|o:|{%d}\n", _printf("%o", 4285798235));
+	printf("|o:|{%d}\n", printf("%o", 4285798235));
+
+
+	printf("|x:|{%d}\n", _printf("%x", -1));
+	printf("|x:|{%d}\n", printf("%x", -1));
+
+	printf("|x:|{%d}\n", _printf("%x", 0));
+	printf("|x:|{%d}\n", printf("%x", 0));
+
+	printf("|x:|{%d}\n", _printf("%x", 4285798235));
+	printf("|x:|{%d}\n", printf("%x", 4285798235));
+
+	printf("|X:|{%d}\n", _printf("%X", -1));
+	printf("|X:|{%d}\n", printf("%X", -1));
+
+	printf("|X:|{%d}\n", _printf("%X", 0));
+	printf("|X:|{%d}\n", printf("%X", 0));
+
+	printf("|X:|{%d}\n", _printf("%X", 4285798235));
+	printf("|X:|{%d}\n", printf("%X", 4285798235));
 	return (0);
 }
