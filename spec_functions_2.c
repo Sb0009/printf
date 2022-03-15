@@ -166,7 +166,7 @@ int	handle_spec_p(void *ptr)
 	addr = va_arg(data->args, void *);
 	if (!addr)
 	{
-		write_buffer("(nil)", 4, data);
+		write_buffer("(nil)", 5, data);
 		return (0);
 	}
 	str = printf_numbers((unsigned long)addr, 16, data);

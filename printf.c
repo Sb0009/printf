@@ -15,9 +15,95 @@ void	reset_flags(format_t *data)
 	data->width_flag = 0;
 	data->hash_flag = 0;
 	data->precision_flag = 0;
+	data->precision_value = 0;
 	data->upcase_flag = 0;
 	data->long_flag = 0;
 	data->short_flag = 0;
+}
+
+/**
+ * read_flags -
+ *
+ */
+
+size_t		read_flags(const char *format, format_t *data)
+{
+	int		len;
+	/**
+	 * Order: '-', '+', space, '#', '0', width, precision, length, specifier
+	 *
+	 */
+	len = 0;
+	if (format[len] == '-')
+	{
+		data->minus_flag = 1;
+		len++;
+	}
+	if (format[len] == '+')
+	{
+		data->minus_flag = 1;
+		len++;
+	}
+	if (format[len] == ' ')
+	{
+		data->space_flag = 1;
+		len++;
+	}
+	if (format[len] == '0')
+	{
+		data->zero_flag = 1;
+		len++;
+	}
+	if (_isdigit(format[len]))
+	{
+		data->width_flag = _atoi(format + len);
+		if (data->width_flag < 0)
+			data->width_flag = 0;
+		len++;
+	}
+	else if (format[len] == '*')
+	{
+		data->width_flag = va_arg(data->args, int);
+		if (data->width_flag < 0)
+			data->width_flag = 0;
+		while (_isdigit(format[len]))
+			len++;
+	}
+	if (format[len] == '.')
+	{
+		data->precision_flag = 1;
+		len++;
+		if (_isdigit(format[len + 1]))
+		{
+			data->precision_value = _atoi(format + len);
+			if (data->precision_value < 0)
+				data->precision_value = 0;
+		}
+		else if (format[len + 1] == '*')
+		{
+			data->precision_value = va_arg(data->args, int);
+			if (data->precision_value < 0)
+			{
+				data->precision_flag = 0;
+				data->precision_value = 0;
+			}
+		}
+		else
+			data->precision_value = 0;
+		while (_isdigit(format[len]))
+			len++;
+	}
+	if (format[len] == 'l')
+	{
+		data->long_flag = 1;
+		len++;
+	}
+	else if (format[len] == 'h')
+	{
+		data->short_flag = 1;
+		len++;
+	}
+	return (len);
 }
 
 /**
@@ -29,27 +115,48 @@ void	reset_flags(format_t *data)
 int		handle_specialchar(const char **format, format_t *data)
 {
 	int			i;
+	size_t		len, clen;
 
 	reset_flags(data);
 	(*format)++;
-	/**
-	 * Add format handling here
-	 */
-
+	len = read_flags(*format, data);
+	*format += len;
 	for (i = 0; i < SPEC_LAST; i++)
 	{
 		if (**format && **format == data->fct_tab[i].spec)
 		{
-			(*format)++;
 			if (data->fct_tab[i].fct)
+			{
+				(*format)++;
 				return (data->fct_tab[i].fct((void *)data));
-			printf("Function not available yet\n");
-			return (-1);
+			}
+			if (!*format)
+			{
+				printf("Function not available yet\n");
+				return (-1);
+			}
 		}
-		/* code */
 	}
 	if (**format)
-		write_buffer((*format) - 1, 1, data);
+	{
+		if (data->long_flag)
+		{
+			clen = _strclen(*format - len - 1, 'l');
+			write_buffer((*format) - len - 1, clen, data);
+			write_buffer((*format), 1, data);
+			(*format)++;
+			return (len);
+		}
+		if (data->short_flag)
+		{
+			clen = _strclen(*format - len - 1, 'h');
+			write_buffer((*format) - len - 1, clen, data);
+			write_buffer((*format), 1, data);
+			(*format)++;
+			return (len);
+		}
+		write_buffer((*format) - len - 1, len + 1, data);
+	}
 	return (-1);
 }
 

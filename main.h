@@ -87,9 +87,10 @@ typedef struct	format_s
 	unsigned char		plus_flag;
 	unsigned char		space_flag;
 	unsigned char		zero_flag;
-	unsigned char		width_flag;
+	int					width_flag;
 	unsigned char		hash_flag;
 	unsigned char		precision_flag;
+	int					precision_value;
 	unsigned char		upcase_flag;
 	unsigned char		long_flag;
 	unsigned char		short_flag;
@@ -124,6 +125,8 @@ char	*_strncpy(char *dest, const char *src, int n);
 int		_strclen(const char *str, char c);
 char	*_strdup(char *str);
 char	*_strcat(char *dest, char *src);
-int		print_string(va_list arg);
+int		_isdigit(int c);
+int		_atoi(const char *s);
+
 
 #endif /* __MAIN_H__ */

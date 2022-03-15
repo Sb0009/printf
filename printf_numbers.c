@@ -76,7 +76,8 @@ void	get_unsigned_number(char *str, unsigned long nb, short base, int upper)
 char	*format_number(char *str, long nb, short base, format_t *data)
 {
 	char	*buff;
-	size_t	i, len, nblen;
+	size_t	nblen;
+	int		i, len;
 
 	nblen = _strlen(str);
 	len = _strlen(str) + (nb < 0 && base == 10 ? 1 : 0);
