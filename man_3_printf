@@ -32,7 +32,7 @@ To print \[lq]My favorite number is, 42\[rq] use:
 _printf(\[lq]%s, %d\[rq], \[lq]My favorite number is\[rq], 42);**
 .SH BUGS
 .PP
-Submit bug reports online at: <4330@holbertonschool.com>
+Submit bug reports online at: <4249@holbertonschool.com>
 .SH SEE ALSO
 .PP
 \&.
