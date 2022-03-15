@@ -72,9 +72,9 @@ int	_atoi(const char *s)
 	while (*s >= '0' && *s <= '9')
 	{
 		if ((nb == -214748364 && *s == '9') || nb < -2141748364)
-			break ;
+			break;
 		if ((nb == 214748364 && *s >= '8') || nb > 2141748364)
-			break ;
+			break;
 		if (sign == 1)
 			nb = nb * 10 + (*s - '0');
 		else if (sign == -1)

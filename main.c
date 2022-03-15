@@ -1,5 +1,5 @@
 #include "main.h"
-
+#include <limits.h>
 int		main(void)
 {
 	_printf("%a\n");
@@ -102,5 +102,9 @@ int		main(void)
 
 	printf("|%%hr:|{%d}\n", _printf("%hr"));
 	printf("|%%hr:|{%d}\n", printf("%hr"));
+
+
+	printf("|%%ld:|{%d}\n", _printf("%li", 0UL));
+	printf("|%%ld:|{%d}\n", printf("%li", 0UL));
 	return (0);
 }

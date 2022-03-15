@@ -22,121 +22,16 @@ void	reset_flags(format_t *data)
 }
 
 /**
- * read_flags -
- *
+ * handle_specialchar_err - Does printing specific to certain flag errors
+ * @format: Format string
+ * @data: Pointer to general data structure
+ * @len: Length of parsed flags
+ * Return: len or -1 depending on error
  */
-
-size_t		read_flags(const char *format, format_t *data)
+int		handle_specialchar_err(const char **format, format_t *data, size_t len)
 {
-	int		len;
-	/**
-	 * Order: '-', '+', space, '#', '0', width, precision, length, specifier
-	 *
-	 */
-	len = 0;
-	if (format[len] == '-')
-	{
-		data->minus_flag = 1;
-		len++;
-	}
-	if (format[len] == '+')
-	{
-		data->minus_flag = 1;
-		len++;
-	}
-	if (format[len] == ' ')
-	{
-		data->space_flag = 1;
-		len++;
-	}
-	if (format[len] == '0')
-	{
-		data->zero_flag = 1;
-		len++;
-	}
-	if (_isdigit(format[len]))
-	{
-		data->width_flag = _atoi(format + len);
-		if (data->width_flag < 0)
-			data->width_flag = 0;
-		len++;
-	}
-	else if (format[len] == '*')
-	{
-		data->width_flag = va_arg(data->args, int);
-		if (data->width_flag < 0)
-			data->width_flag = 0;
-		while (_isdigit(format[len]))
-			len++;
-	}
-	if (format[len] == '.')
-	{
-		data->precision_flag = 1;
-		len++;
-		if (_isdigit(format[len + 1]))
-		{
-			data->precision_value = _atoi(format + len);
-			if (data->precision_value < 0)
-				data->precision_value = 0;
-		}
-		else if (format[len + 1] == '*')
-		{
-			data->precision_value = va_arg(data->args, int);
-			if (data->precision_value < 0)
-			{
-				data->precision_flag = 0;
-				data->precision_value = 0;
-			}
-		}
-		else
-			data->precision_value = 0;
-		while (_isdigit(format[len]))
-			len++;
-	}
-	if (format[len] == 'l')
-	{
-		data->long_flag = 1;
-		len++;
-	}
-	else if (format[len] == 'h')
-	{
-		data->short_flag = 1;
-		len++;
-	}
-	return (len);
-}
+	size_t	clen;
 
-/**
- * handle_specialchar - Calls fonction corresponding to specifier in string
- * @format: Pointer to format string
- * @data: Pointer to structure containing general data
- * Return: -1 if error, 0 if none
- */
-int		handle_specialchar(const char **format, format_t *data)
-{
-	int			i;
-	size_t		len, clen;
-
-	reset_flags(data);
-	(*format)++;
-	len = read_flags(*format, data);
-	*format += len;
-	for (i = 0; i < SPEC_LAST; i++)
-	{
-		if (**format && **format == data->fct_tab[i].spec)
-		{
-			if (data->fct_tab[i].fct)
-			{
-				(*format)++;
-				return (data->fct_tab[i].fct((void *)data));
-			}
-			if (!*format)
-			{
-				printf("Function not available yet\n");
-				return (-1);
-			}
-		}
-	}
 	if (**format)
 	{
 		if (data->long_flag)
@@ -158,6 +53,39 @@ int		handle_specialchar(const char **format, format_t *data)
 		write_buffer((*format) - len - 1, len + 1, data);
 	}
 	return (-1);
+}
+/**
+ * handle_specialchar - Calls fonction corresponding to specifier in string
+ * @format: Pointer to format string
+ * @data: Pointer to structure containing general data
+ * Return: -1 if error, 0 if none
+ */
+int		handle_specialchar(const char **format, format_t *data)
+{
+	int			i;
+	size_t		len;
+
+	reset_flags(data);
+	(*format)++;
+	len = read_flags(*format, data);
+	*format += len;
+	for (i = 0; i < SPEC_LAST; i++)
+	{
+		if (**format && **format == data->fct_tab[i].spec)
+		{
+			if (data->fct_tab[i].fct)
+			{
+				(*format)++;
+				return (data->fct_tab[i].fct((void *)data));
+			}
+			if (!*format)
+			{
+				printf("Function not available yet\n");
+				return (-1);
+			}
+		}
+	}
+	return (handle_specialchar_err(format, data, len));
 }
 
 /**
