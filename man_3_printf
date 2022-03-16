@@ -11,13 +11,6 @@ _printf \- this function is used for printing data input.
 .SH DESCRIPTION
 .PP
 **_printf** produces output according to a format
-.SH OPTIONS
-.TP
-.B \f[B]\-h\f[R]
-display help message
-.TP
-.B \f[B]\-n\f[R]
-name of the person to say hello to
 .SH EXAMPLES
 .PP
 ** To print \[lq]Hello doc !\[rq] use:
@@ -55,24 +48,14 @@ See man 3 printf.
 \&.
 Converter
 .PP
-\&.[c] Character.
-.PP
-\&.[d] or [i]: decimal integer.
+\&.
+[c] Character.
 .PP
 \&.
-[e] Scientific notation (mantissa/exponent) using e character.
+[d] or [i]: Decimal integer.
 .PP
 \&.
-[E] Scientific notation (mantissa/exponent) using E character.
-.PP
-\&.
-[f] Decimal floating point.
-.PP
-\&.
-[g] Uses the shorter of %e or %f.
-.PP
-\&.
-[G] Uses the shorter of %E or %f.
+[u]: Unsigned integer.
 .PP
 \&.
 [o] Octal.
@@ -87,25 +70,41 @@ Converter
 [x] Unsigned hexadecimal integer.
 .PP
 \&.
-[x] Unsigned hexadecimal integer (capital letters).
+[X] Unsigned hexadecimal integer (capital letters).
 .PP
 \&.
-[p] Pointer .
+[r] Reversed string of characters.
 .PP
 \&.
-[n] Nothing printed.
+[R] Rot13'd string of characters.
 .PP
 \&.
-[%] Character.
+[S] String with non-printable shown in hexa
+.PP
+\&.
+[%] Character '%'.
 .PP
 \&.
 [none] print normally (right justify, space fill)
 .PP
+.SH FLAGS: Format "%[SPECIFIERS][FORMAT SPECIFIERS].
 \&.
-[\-] left justify
+[\-] Left justify.
 .PP
 \&.
-[0] leading zero fill
+[0] Leading zero fill.
+.PP
+\&.
+[+] Print space in front of signed number.
+.PP
+\&.
+[ ] Print plus in front of signed number if positive.
+.PP
+\&.
+[#] Add prefix to certain numbers format (such as 0x for hexadecimal integers).
+.PP
+\&.
+[NUMBER] Width flag - Sets output to have a minimum size
 .PP
 \&.
 [+] print plus on numbers.
