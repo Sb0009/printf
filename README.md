@@ -13,7 +13,7 @@
 
 - Nicolas Bouté
 - Siham Badyine
-  <p><img src="https://github.com/Sb0009/printf/blob/master/Images/Betty_With_us.jpeg?raw=true" alt="flowchart" width="350 px"></p> 
+  <p><img src="https://github.com/Sb0009/printf/blob/master/Images/Betty_With_us.jpeg?raw=true" alt="flowchart" width="550 px"></p> 
 
 
 
