@@ -13,10 +13,11 @@
 
 - Nicolas Bouté
 - Siham Badyine
+  <p><img src="https://github.com/Sb0009/printf/blob/master/Images/Betty_With_us.jpeg?raw=true" alt="flowchart" width="350 px"></p> 
 
 
-<p>![salon](https://user-images.githubusercontent.com/96126445/163851308-f52e26a0-ee22-4500-ba92-780c61fcc3e7.jpg)
- alt="the team with directrice Holberton School Toulouse" width="142px"></p> 
+
+ alt="the team with directrice Holberton School Toulouse" width="142px">
 
 * [Introduction](#introduction)
 * [Steps](#steps)
