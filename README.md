@@ -15,7 +15,8 @@
 - Siham Badyine
 
 
-<p><img src="https://media-exp1.licdn.com/dms/image/C5622AQGTBgMxO9XJlg/feedshare-shrink_1280/0/1647092494592?e=1649894400&v=beta&t=aFyQ_-YNA--W3q7mf7CcCvHPDZFAU3CGFPlNxL6usfQ" alt="the team with directrice Holberton School Toulouse" width="142px"></p> 
+<p><img src="![salon](https://user-images.githubusercontent.com/96126445/163851308-f52e26a0-ee22-4500-ba92-780c61fcc3e7.jpg)
+" alt="the team with directrice Holberton School Toulouse" width="142px"></p> 
 
 * [Introduction](#introduction)
 * [Steps](#steps)
