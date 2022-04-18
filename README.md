@@ -17,7 +17,6 @@
 
 
 
- alt="the team with directrice Holberton School Toulouse" width="142px">
 
 * [Introduction](#introduction)
 * [Steps](#steps)
